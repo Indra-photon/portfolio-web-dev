@@ -1,9 +1,13 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-const YOUR_SERVICE_ID = process.env.YOUR_SERVICE_ID;
-const YOUR_TEMPLATE_ID = process.env.YOUR_TEMPLATE_ID;
-const YOUR_PUBLIC_ID = process.env.YOUR_PUBLIC_ID;
+// const YOUR_SERVICE_ID = process.env.YOUR_SERVICE_ID;
+// const YOUR_TEMPLATE_ID = process.env.YOUR_TEMPLATE_ID;
+// const YOUR_PUBLIC_ID = process.env.YOUR_PUBLIC_ID;
+
+YOUR_SERVICE_ID = service_lsdq26v
+YOUR_TEMPLATE_ID = template_qtikgih
+YOUR_PUBLIC_KEY = tQy-Zlw9w6LiBRChZ
 
 
 export const ContactUs = () => {
@@ -19,8 +23,7 @@ export const ContactUs = () => {
           form.current.reset();
         },
         (error) => {
-          console.log(YOUR_SERVICE_ID,YOUR_TEMPLATE_ID,YOUR_PUBLIC_ID);
-          
+          console.log(YOUR_SERVICE_ID,YOUR_TEMPLATE_ID,YOUR_PUBLIC_ID);         
           console.log('Failed!', error.text);
         },
       );
