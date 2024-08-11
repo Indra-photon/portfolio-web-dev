@@ -19,7 +19,7 @@ export const ContactUs = () => {
           form.current.reset();
         },
         (error) => {
-          console.log({YOUR_SERVICE_ID,YOUR_TEMPLATE_ID,YOUR_PUBLIC_ID});
+          console.log(YOUR_SERVICE_ID,YOUR_TEMPLATE_ID,YOUR_PUBLIC_ID);
           
           console.log('Failed!', error.text);
         },
