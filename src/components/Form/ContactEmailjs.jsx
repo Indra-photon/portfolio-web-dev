@@ -17,7 +17,9 @@ export const ContactUs = () => {
           alert('Message sent successfully!');
           form.current.reset();
         },
-        (error) => {        
+        (error) => {  
+          console.log(YOUR_SERVICE_ID, YOUR_TEMPLATE_ID,YOUR_PUBLIC_ID);
+                
           console.log('Failed!', error.text);
         },
       );
