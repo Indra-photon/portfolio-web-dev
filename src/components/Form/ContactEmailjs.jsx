@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
-// Correctly assign string values to your variables
+
 const YOUR_SERVICE_ID = 'service_lsdq26v';
 const YOUR_TEMPLATE_ID = 'template_qtikgih';
 const YOUR_PUBLIC_ID = 'tQy-Zlw9w6LiBRChZ';
