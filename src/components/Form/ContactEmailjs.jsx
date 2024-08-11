@@ -5,9 +5,9 @@ import emailjs from '@emailjs/browser';
 // const YOUR_TEMPLATE_ID = process.env.YOUR_TEMPLATE_ID;
 // const YOUR_PUBLIC_ID = process.env.YOUR_PUBLIC_ID;
 
-YOUR_SERVICE_ID = service_lsdq26v
-YOUR_TEMPLATE_ID = template_qtikgih
-YOUR_PUBLIC_KEY = tQy-Zlw9w6LiBRChZ
+const YOUR_SERVICE_ID = 'service_lsdq26v'
+const YOUR_TEMPLATE_ID = 'template_qtikgih'
+const YOUR_PUBLIC_KEY = 'tQy-Zlw9w6LiBRChZ'
 
 
 export const ContactUs = () => {
