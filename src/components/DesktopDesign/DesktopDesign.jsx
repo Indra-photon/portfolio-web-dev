@@ -1,6 +1,7 @@
 import React from 'react'
+import './DesktopDesign.css'
 
-const DesktopDesign = () => {
+const DesktopDesign = ({imgLink}) => {
   return (
         <div>
             <div class="outer-box">
@@ -13,31 +14,27 @@ const DesktopDesign = () => {
                     </section>
                     <section class="side-container1-section-bottom">
                         
-                        <hr class="blank line1">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line1">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line1">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
-                        <hr class="blank line2">
+                        <hr class="blank line1" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line1" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line1" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
+                        <hr class="blank line2" />
                     </section>
         
                 </div>
-                <div class="side-container2">
-                    <section class="img">
-                        <img src="svg.svg" alt="Computer" height="300px" width="300px">
-                    </section>
-                    <section class="text">
-                    <h1> <span class="span1">We're Hiring</span> <p> <span class="span2">WEB</span> <br><span class="span3">DESIGNER
-                    </span><p> <span class="span4">Apply Now</span></p></h1>
+                <div className="side-container2 ">
+                    <section className="img">
+                        <img src={imgLink} alt="Computer"></img>
                     </section>
                 </div>
             </div>

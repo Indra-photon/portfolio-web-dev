@@ -1,0 +1,94 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background-color: orange;
+}
+
+/* Outer Box */
+.outer-box {
+  display: flex;
+  margin: 40px 0px 0px 200px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 70%;
+  height: 500px;
+  background-color: black;
+}
+
+/* Side Container 1 */
+.side-container1 {
+  background-color: rgba(105, 108, 138, 0.37);
+  width: 150px;
+  padding-top: 35px;
+}
+
+/* Top Section */
+.side-container1-section-top {
+  display: flex;
+  gap: 10px;
+}
+
+/* Bottom Section */
+.side-container1-section-bottom .blank {
+  height: 10px;
+  background-color: black;
+  border: transparent;
+  border-radius: 10px;
+}
+.side-container1-section-bottom .line1 {
+  margin-top: 20px;
+  margin-left: 20px;
+  width: 120px;
+}
+.side-container1-section-bottom .line2 {
+  margin-top: 10px;
+  margin-left: 40px;
+  width: 90px;
+}
+
+/* Photon Circles */
+.side-container1 .photon {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.small-circle1 {
+  background-color: #ea4002;
+}
+.small-circle2 {
+  background-color: yellow;
+}
+.small-circle3 {
+  background-color: green;
+}
+
+/* Side Container 2 */
+.side-container2 {
+  background-color: rgb(32, 32, 34);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 800px;
+}
+
+/* Stand Styling */
+.short-stand {
+  height: 8px;
+  background-color: gray;
+  margin: 0px 550px 0px 550px;
+  border-radius: 5px;
+}
+.long-stand {
+  height: 20px;
+  background-color: whitesmoke;
+  margin: 0px 150px 0px 150px;
+  border-radius: 5px;
+}
