@@ -3,6 +3,7 @@ import pic5 from '../assets/pic5.svg';
 import pic6 from '../assets/sisyphus.jpg';
 import pic7 from '../assets/tinderDog.jpg';
 import pic8 from '../assets/shopping.jpg';
+import pic9 from '../assets/photography-site.jpg'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
@@ -26,6 +27,31 @@ const Project = () => {
 
         {/* Project Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-12">
+        {/*Photography site*/}
+        <motion.div 
+            className="bg-white p-6 rounded-lg shadow-lg"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover = {{scale: 1.1}}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+          >
+            <img src={pic9} className="w-full rounded-lg mb-6" alt="Photography site" />
+            <h3 className="text-4xl text-orange-800 mb-4">Photography Site</h3>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {['#react.js', '#express.js', '#node.js', '#mongoDB', '#mongoose', '#javascript'].map(tag => (
+                <span key={tag} className="bg-amber-500 p-2 font-bold rounded-xl">{tag}</span>
+              ))}
+            </div>
+            <div className="flex gap-4">
+              <a href="https://github.com/Indra-photon/E-commerce-Website" className="text-xl text-white bg-orange-500 rounded-2xl p-2">
+                Github repo
+              </a>
+              <a href="https://photography-website-ruby.vercel.app/" className="text-xl text-white bg-orange-500 rounded-2xl p-2">
+                Go Live
+              </a>
+            </div>
+          </motion.div>
+
           {/* E-commerce Project */}
           <motion.div 
             className="bg-white p-6 rounded-lg shadow-lg"

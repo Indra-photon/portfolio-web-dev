@@ -30,7 +30,7 @@ export const ContactUs = () => {
         onSubmit={sendEmail}
         className="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg"
       >
-        <h2 className="text-2xl font-bold text-center mb-6 text-orange-800">Contact Us</h2>
+        <h2 className="text-2xl font-bold text-center mb-6 text-orange-800">Contact Me</h2>
 
         <div className="mb-4">
           <label className="block text-orange-800 text-lg mb-2" htmlFor="from_name">
