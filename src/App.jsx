@@ -14,7 +14,6 @@ function App() {
   return (
     <>
       <div>
-        
         <main>
           <Routes>
             <Route path = '/' element = {<HomepageTop />} />
