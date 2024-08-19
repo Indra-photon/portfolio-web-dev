@@ -113,7 +113,7 @@ const Homepage = () => {
                 <div className = 'flex gap-5'>
                     <section>
                         <p className = 'text-orange-800 text-3xl pb-5'>Develop what you need</p>
-                        <p className = 'text-xl'>I'm a developer, so I know how to create your website to run across devices using the latest technologies available.</p>
+                        <p className = 'text-xl'>I am a developer, so I know how to create your website to run across devices using the latest technologies available.</p>
                     </section>
                     <img src={pic3} className = 'w-28 h-28'></img>          
                 </div>
