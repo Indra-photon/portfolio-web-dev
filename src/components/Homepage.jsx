@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import '../components/Homepage.css'
 import pic1 from '../assets/pic1_homepage.svg'
 import pic2 from '../assets/pic2.svg'
 import pic3 from '../assets/pic3.svg'
-import Typewriter from './typeWriter'
 import { motion } from "framer-motion"
-import {AnimatePresence} from 'framer-motion'
 import HoverCard from './HoverCard/HoverCard'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -16,7 +14,6 @@ const text = "Welcome to WebWorks Gallery".split(" ");
 const Homepage = () => {
 
     const [isTextComplete, setIsTextComplete] = useState(false);
-    const [selectedId, setSelectedId] = useState(null)
 
     const handleTypewriterComplete = () => {
         setIsTextComplete(true);

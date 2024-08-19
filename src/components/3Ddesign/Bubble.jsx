@@ -33,8 +33,8 @@ const Bubbles = () => {
   return (
     <div className="h-screen w-screen">
       <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
-        <ambientLight intensity={0.5} />
-        <pointLight position={[10, 10, 10]} />
+        <ambientLight intensity = {0.5} />
+        <pointLight position = {[10, 10, 10]} />
         {[...Array(30)].map((_, index) => (
           <Bubble key={index} />
         ))}

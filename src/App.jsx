@@ -1,8 +1,5 @@
-import { useState } from 'react'
 import Homepage from './components/Homepage'
-import Navbar from './components/Navbar'
 import Project from './components/Project'
-import Footer from './components/Footer'
 import About from './components/About'
 import HomepageTop from './components/HomepageTop'
 import { Route, Routes } from 'react-router-dom';
