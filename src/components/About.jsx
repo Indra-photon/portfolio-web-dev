@@ -64,7 +64,7 @@ const About = () => {
               {educationData.map((item) => (
                 <motion.div
                   key={item.id}
-                  className="w-full border-2 border-orange-800 rounded-lg p-5 mb-4 bg-amber-100 shadow-md sm:w-screen"
+                  className="w-full border-2 border-orange-800 rounded-lg p-5 mb-4 bg-amber-100 shadow-md sm:w-full"
                   whileHover={{ backgroundColor: 'rgb(245, 158, 11)' }}
                   transition={{ duration: 0.3 }}
                 >
@@ -84,7 +84,7 @@ const About = () => {
               {certificationData.map((item) => (
                 <motion.div
                   key={item.id}
-                  className="w-full border-2 border-orange-800 rounded-lg p-5 mb-4 bg-amber-100 shadow-md sm:w-screen sm:mr-5"
+                  className="w-full border-2 border-orange-800 rounded-lg p-5 mb-4 bg-amber-100 shadow-md sm:w-full sm:mr-5"
                   whileHover={{ backgroundColor: 'rgb(245, 158, 11)' }}
                   transition={{ duration: 0.3 }}
                 >
@@ -97,7 +97,7 @@ const About = () => {
           </div>
         </section>
 
-        <section className=" sm:w-screen  sm:pl-0 text-center mt-16 border-2 pl-2 pr-2 rounded-2xl border-orange-800">
+        <section className=" sm:w-screen sm:px-2 sm:pl-0 text-center mt-16 border-2 pl-2 pr-2 rounded-2xl border-orange-800">
           <section className = 'sm:w-screen'>
             <h3 className="text-3xl font-semibold mt-5 mb-5">Coding Skills</h3>
             <div className="flex flex-wrap justify-center gap-6 mb-1">
