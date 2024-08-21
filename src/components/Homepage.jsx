@@ -23,13 +23,13 @@ const Homepage = () => {
   return (
     <div>
     <Navbar />
-    <div className = ' bg-amber-200 w-screen md:w-screen sm:w-screen'>
-        <div className = 'h-auto bg-amber-200 flex py-10'>
+    <div className = ' bg-amber-200 w-full'>
+        <div className = 'h-auto bg-amber-200 flex py-10 md:w-full sm:w-full'>
             <section>
-                <div className = {`text-3xl font-serif flex gap-10 items-center ${isTextComplete ? 'opacity-100 transition-all duration-500' : 'opacity-0'}`}>
+                <div className = {` sm:w-full text-3xl font-serif flex gap-10 items-center ${isTextComplete ? 'opacity-100 transition-all duration-500' : 'opacity-0'}`}>
                     <section>
-                        <section className = 'md:w-screen sm:w-screen sm:text-left md:text-left md:px-5 sm:px-5'>
-                            <p className = 'pt-1 sm:w-screen'> With a blend of creativity and technical expertise, I bring ideas to life through 
+                        <section className = 'md:w-full sm:text-left md:text-left md:px-5 sm:px-5 sm:w-full sm:flex sm:justify-center'>
+                            <p className = 'pt-1'> With a blend of creativity and technical expertise, I bring ideas to life through 
                             elegant <span className = 'text-orange-800 font-bold'>front end designs</span> and robust <span className = 'text-orange-800 font-bold'>
                             back-end solutions</span></p>
                         </section>
@@ -78,7 +78,7 @@ const Homepage = () => {
                 </div>
                 <section className = 'md:flex md:justify-center'>
                     <HoverCard index={0}>
-                        <div className = 'flex gap-5 pb-8 md:flex md:justify-center sm:flex-col sm:w-screen'>
+                        <div className = 'flex gap-5 pb-8 md:flex md:justify-center sm:flex-col sm:w-full'>
                             <section className = 'sm:flex sm:justify-center'>
                                 <img src={pic2} className = 'w-28 h-28'></img>
                             </section>
@@ -119,7 +119,7 @@ const Homepage = () => {
                 <section className = 'md:flex md:justify-center'>
                     <HoverCard index={0}>
                     <div>
-                        <section className='flex justify-center items-center sm:w-screen sm:flex sm:justify-center sm:px-5'>
+                        <section className='flex justify-center items-center sm:w-full sm:flex sm:justify-center sm:px-5'>
                             <p className = 'text-orange-800 text-3xl pb-5'>I’m currently available for freelance work.</p>
                         </section>
                         <section className='flex justify-center items-center sm:px-5'>
