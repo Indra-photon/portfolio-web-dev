@@ -23,17 +23,17 @@ const Homepage = () => {
   return (
     <div>
     <Navbar />
-    <div className = 'h-max bg-amber-200'>
+    <div className = ' bg-amber-200 w-screen md:w-screen sm:w-screen'>
         <div className = 'h-auto bg-amber-200 flex py-10'>
             <section>
                 <div className = {`text-3xl font-serif flex gap-10 items-center ${isTextComplete ? 'opacity-100 transition-all duration-500' : 'opacity-0'}`}>
                     <section>
-                        <section className = 'md:px-5 sm:px-5'>
-                            <p className = 'pt-1 sm:w-screen sm:px-5 sm:pl-5'> With a blend of creativity and technical expertise, I bring ideas to life through 
+                        <section className = 'md:w-screen sm:w-screen sm:text-left md:text-left md:px-5 sm:px-5'>
+                            <p className = 'pt-1 sm:w-screen'> With a blend of creativity and technical expertise, I bring ideas to life through 
                             elegant <span className = 'text-orange-800 font-bold'>front end designs</span> and robust <span className = 'text-orange-800 font-bold'>
                             back-end solutions</span></p>
                         </section>
-                        <section className='flex justify-center mt-5 mx-10'>
+                        <section className='flex justify-center mt-5'>
                             <div
                                 className={`
                                     w-full md:w-3/4 text-orange-800 lg:w-2/3 bg-[rgb(245, 158, 11)] rounded-2xl transition-all duration-1000 ease-linear flex flex-col md:flex-row justify-center items-center py-5 ${isTextComplete ? 'opacity-100' : 'opacity-0'}`}
@@ -119,7 +119,7 @@ const Homepage = () => {
                 <section className = 'md:flex md:justify-center'>
                     <HoverCard index={0}>
                     <div>
-                        <section className='flex justify-center items-center sm:flex sm:justify-center sm:px-5'>
+                        <section className='flex justify-center items-center sm:w-screen sm:flex sm:justify-center sm:px-5'>
                             <p className = 'text-orange-800 text-3xl pb-5'>I’m currently available for freelance work.</p>
                         </section>
                         <section className='flex justify-center items-center sm:px-5'>
