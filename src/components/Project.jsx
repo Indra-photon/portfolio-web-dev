@@ -4,6 +4,7 @@ import pic6 from '../assets/sisyphus.jpg';
 import pic7 from '../assets/tinderDog.jpg';
 import pic8 from '../assets/shopping.jpg';
 import pic9 from '../assets/photography-site.jpg'
+import pic10 from '../assets/portfolio_pr_dubai.png'
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
@@ -25,9 +26,7 @@ const Project = () => {
           <p className="text-xl mt-2 text-center">Here's a selection of some recent work.</p>
         </motion.div>
 
-        {/* Project Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 pt-12">
-        {/*Photography site*/}
+        <div className="grid sm:grid-cols-1 grid-cols-2 lg:grid-cols-2 gap-12 pt-12">
         <motion.div 
             className="bg-white p-6 rounded-lg shadow-lg"
             initial={{ opacity: 0, y: 50 }}
@@ -52,7 +51,6 @@ const Project = () => {
             </div>
           </motion.div>
 
-          {/* E-commerce Project */}
           <motion.div 
             className="bg-white p-6 rounded-lg shadow-lg"
             initial={{ opacity: 0, y: 50 }}
@@ -60,40 +58,15 @@ const Project = () => {
             whileHover = {{scale: 1.1}}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <img src={pic8} className="w-full rounded-lg mb-6" alt="E-commerce website" />
-            <h3 className="text-4xl text-orange-800 mb-4">E-commerce website</h3>
+            <img src={pic10} className="w-full rounded-lg mb-6" alt="Photography site" />
+            <h3 className="text-4xl text-orange-800 mb-4">Facility Management Services, Dubai</h3>
             <div className="flex flex-wrap gap-2 mb-4">
               {['#react.js', '#express.js', '#node.js', '#mongoDB', '#mongoose', '#javascript'].map(tag => (
                 <span key={tag} className="bg-amber-500 p-2 font-bold rounded-xl">{tag}</span>
               ))}
             </div>
             <div className="flex gap-4">
-              <a href="https://github.com/Indra-photon/E-commerce-Website" className="text-xl text-white bg-orange-500 rounded-2xl p-2">
-                Github repo
-              </a>
-            </div>
-          </motion.div>
-
-          {/* Digital Web-development Website */}
-          <motion.div 
-            className="bg-white p-6 rounded-lg shadow-lg"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            whileHover = {{scale: 1.1}}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
-          >
-            <img src={pic6} className="w-full rounded-lg mb-6" alt="Digital Web-development Website" />
-            <h3 className="text-4xl text-orange-800 mb-4">Digital Web-development Website</h3>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {['#react.js', '#express.js', '#node.js', '#mongoDB', '#mongoose', '#javascript'].map(tag => (
-                <span key={tag} className="bg-amber-500 p-2 font-bold rounded-xl">{tag}</span>
-              ))}
-            </div>
-            <div className="flex gap-4">
-              <a href="https://github.com/Indra-photon/Cloning-Website---Sisyphus-Infotech" className="text-xl text-white bg-orange-500 rounded-2xl p-2">
-                Github repo
-              </a>
-              <a href="https://indra-photon.github.io/Cloning-Website---Sisyphus-Infotech/" className="text-xl text-white bg-orange-500 rounded-2xl p-2">
+              <a href="https://www.absdreamsfacilities.com/" className="text-xl text-white bg-orange-500 rounded-2xl p-2">
                 Go Live
               </a>
             </div>

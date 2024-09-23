@@ -75,8 +75,6 @@ const About = () => {
               ))}
             </section>
           </div>
-      
-      
 
           <div className="lg:w-1/2 sm:px-2 sm:mx-0">
             <section className="border-l-4 border-orange-800 pl-4 sm:pl-2">
