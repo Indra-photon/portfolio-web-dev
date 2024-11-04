@@ -24,16 +24,15 @@ export const ContactUs = () => {
   };
 
   return (
-    <div className="bg-amber-200 min-h-screen flex items-center justify-center">
+    <div className="flex items-center justify-center">
       <form
         ref={form}
         onSubmit={sendEmail}
-        className="bg-white rounded-lg shadow-lg p-8 w-full max-w-lg"
+        className="rounded-lg shadow-lg w-full max-w-lg bg-[#003049]"
       >
-        <h2 className="text-2xl font-bold text-center mb-6 text-orange-800">Contact Me</h2>
 
         <div className="mb-4">
-          <label className="block text-orange-800 text-lg mb-2" htmlFor="from_name">
+          <label className="block text-lg mb-2 text-[#FDF0D5]" htmlFor="from_name">
             Name
           </label>
           <input
@@ -41,12 +40,12 @@ export const ContactUs = () => {
             name="from_name"
             id="from_name"
             required
-            className="w-full px-3 py-2 border border-orange-400 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-3 py-2 border border-sky-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
 
         <div className="mb-4">
-          <label className="block text-orange-800 text-lg mb-2" htmlFor="email">
+          <label className="block text-[#FDF0D5] text-lg mb-2" htmlFor="email">
             Email
           </label>
           <input
@@ -54,13 +53,13 @@ export const ContactUs = () => {
             name="email"
             id="email"
             required
-            className="w-full px-3 py-2 border border-orange-400 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-3 py-2 border border-sky-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
 
         <div className="mb-6">
           <label
-            className="block text-orange-800 text-lg mb-2"
+            className="block text-[#FDF0D5] text-lg mb-2"
             htmlFor="message"
           >
             Message
@@ -70,7 +69,7 @@ export const ContactUs = () => {
             id="message"
             required
             rows="4"
-            className="w-full px-3 py-2 border border-orange-400 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
+            className="w-full px-3 py-2 border border-sky-700 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
           />
         </div>
 
@@ -78,7 +77,7 @@ export const ContactUs = () => {
           <input
             type="submit"
             value="Send"
-            className="bg-orange-500 text-white text-lg font-semibold px-6 py-3 rounded-md hover:bg-orange-600 cursor-pointer"
+            className="bg-[#003049] text-white text-lg font-semibold px-6 py-3 rounded-md hover:bg-sky-700 cursor-pointer"
           />
         </div>
       </form>

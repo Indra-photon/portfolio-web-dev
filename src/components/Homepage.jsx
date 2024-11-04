@@ -1,11 +1,8 @@
 /*Old code*/
-import { useState } from 'react'
 import '../components/Homepage.css'
-import pic1 from '../assets/pic1_homepage.svg'
 import pic2 from '../assets/pic2.svg'
 import pic3 from '../assets/pic3.svg'
 import { motion } from "framer-motion"
-import HoverCard from './HoverCard/HoverCard'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -13,12 +10,6 @@ import Footer from '../components/Footer'
 const text = "Welcome to WebWorks Gallery".split(" ");
 
 const Homepage = () => {
-
-    const [isTextComplete, setIsTextComplete] = useState(true);
-
-    const handleTypewriterComplete = () => {
-        setIsTextComplete(true);
-    };
     const hoverAnimation = {
         rest: { scale: 1, opacity: 1 },
         hover: { scale: 1.05, opacity: 1.1, transition: { duration: 0.3 } },
@@ -188,3 +179,7 @@ const Homepage = () => {
 }
 
 export default Homepage
+
+'use client'
+
+
