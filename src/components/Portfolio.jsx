@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDownIcon, CodeBracketIcon, EnvelopeIcon, UserIcon } from '@heroicons/react/24/outline'
+import { ChevronDownIcon, CodeBracketIcon, UserIcon } from '@heroicons/react/24/outline'
 import pic6 from '../assets/Indranil_pic-modified.png'
 import pic7 from '../assets/Bootstrap.svg'
 import pic8 from '../assets/Express.svg'
@@ -19,6 +19,7 @@ import facebook from '../assets/facebook.png'
 import instagram from '../assets/instagram.png'
 import linkedin from '../assets/linkedin.png'
 import github from '../assets/Github.svg'
+import { useNavigate } from 'react-router-dom'
 
 const skills = [
   { img: pic11, label: "HTML" },
@@ -40,6 +41,10 @@ const words = paragraphText.split(" ");
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home')
+  const navigate = useNavigate()
+  const gotoProjectpage = () => {
+    navigate("/all-projects")
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,8 +77,10 @@ export default function Portfolio() {
             <li key={section}>
               <button
                 onClick={() => smoothScroll(section)}
-                className={`text-sm uppercase tracking-wider ${
-                  activeSection === section ? 'text-blue-800' : 'text-gray-400 hover:text-gray-500'
+                className={`text-sm uppercase tracking-wider transition-colors ${
+                  activeSection === section
+                    ? 'text-blue-800'
+                    : 'text-gray-400 hover:text-blue-500'
                 }`}
               >
                 {section}
@@ -105,13 +112,7 @@ export default function Portfolio() {
                   }}
                 />
               </p>
-              {/* <motion.p
-                className="text-xl text-[#FDF0D5] mb-8"
-                initial={{ opacity: 0, y: 20 }} 
-                animate={{ opacity: 1, y: 0 }}  
-                transition={{ duration: 0.6, ease: "easeOut" }}>
-                A skilled web developer, crafting and managing websites and web applications to ensure the success of the entire product with finesse.
-              </motion.p> */}
+        
               <motion.p
                 className="text-xl text-[#FDF0D5] mb-8"
                 initial={{ opacity: 0, y: 20 }}
@@ -136,6 +137,12 @@ export default function Portfolio() {
                   </motion.span>
                 ))}
               </motion.p>
+              <div className = 'flex gap-5 justify-center items-center mb-5'>
+                <a href = 'https://github.com/Indra-photon'><img src= {github} className = 'h-8 w-8'></img></a>
+                <a href = 'https://www.facebook.com/indranil.maiti.564/'><img src= {facebook} className = 'h-8 w-8'></img></a>
+                <a href = 'https://www.linkedin.com/in/indranil-maiti-b56967228/'><img src= {linkedin} className = 'h-8 w-8'></img></a>
+                <a href = 'https://www.instagram.com/indra_d_cogniz_clicker/'><img src= {instagram} className = 'h-8 w-8'></img></a>
+              </div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -165,11 +172,11 @@ export default function Portfolio() {
                   <div className="flex justify-center space-x-4">
                     <motion.div whileHover={{ scale: 1.1 }} className="text-center">
                       <UserIcon className="h-12 w-12 text-purple-400 mx-auto mb-2" />
-                      <p className="text-sm text-[#FDF0D5]">5+ Years Experience</p>
+                      <p className="text-sm text-[#FDF0D5]">2 Years Experience</p>
                     </motion.div>
                     <motion.div whileHover={{ scale: 1.1 }} className="text-center">
                       <CodeBracketIcon className="h-12 w-12 text-purple-400 mx-auto mb-2" />
-                      <p className="text-sm text-[#FDF0D5]">50+ Projects Completed</p>
+                      <p className="text-sm text-[#FDF0D5]">10+ Projects Completed</p>
                     </motion.div>
                   </div>
                 </div>
@@ -184,7 +191,7 @@ export default function Portfolio() {
               <h2 className="text-4xl font-bold mb-8 text-[#669BBC] mt-8">SKILLS</h2>
               <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-[#FDF0D5]">
                 <div className="flex justify-center items-center gap-8">
-                  {skills.map((skill, index) => (
+                  {/* {skills.map((skill, index) => (
                     <motion.div
                       key={index}
                       className="relative group flex justify-center"
@@ -205,24 +212,8 @@ export default function Portfolio() {
                         {skill.label}
                       </motion.span>
                     </motion.div>
-                  ))}
-                </div>
-              </div>
+                  ))} */}
 
-            </motion.div>
-            </div>
-          </section>
-
-          {/* <section id="skills" className="min-h-screen flex items-center justify-center py-20">
-            <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              whileInView={{ width: "100%", opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeIn" }}
-              viewport={{ once: true }}
-              className="max-w-3xl mx-auto text-center"
-            >
-              <h2 className="text-4xl font-bold mb-8 text-[#669BBC]">SKILLS</h2>
-              <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-[#FDF0D5]">
                 <div className="flex justify-center items-center gap-8">
                   {skills.map((skill, index) => (
                     <motion.div
@@ -235,6 +226,7 @@ export default function Portfolio() {
                         src={skill.img}
                         className="h-auto w-auto transition-transform transform"
                         alt={skill.label}
+                        aria-label={skill.label}
                       />
                       <motion.span
                         className="absolute inset-0 flex items-center justify-center text-white font-bold opacity-0 group-hover:opacity-100 bg-black bg-opacity-70 rounded-lg"
@@ -247,14 +239,27 @@ export default function Portfolio() {
                     </motion.div>
                   ))}
                 </div>
+
+                </div>
               </div>
 
             </motion.div>
-          </section> */}
+            </div>
+          </section>
 
           <section id="projects" className="min-h-screen flex items-center justify-center py-20">
             <div className='text-center'>
             <h2 className="text-4xl font-bold mb-4 text-[#669BBC]">PROJECTS</h2>
+            <div className='pb-10'>
+              <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-[#003049] text-white px-6 py-3 rounded-full text-lg font-semibold"
+                    onClick={() => gotoProjectpage()}
+                  >
+                    View All Projects
+              </motion.button>
+            </div>
             <ProjectsCarousel />
             </div>
           </section>
@@ -284,7 +289,7 @@ export default function Portfolio() {
               <a href = 'https://www.linkedin.com/in/indranil-maiti-b56967228/'><img src= {linkedin} className = 'h-8 w-8'></img></a>
               <a href = 'https://www.instagram.com/indra_d_cogniz_clicker/'><img src= {instagram} className = 'h-8 w-8'></img></a>
           </div>
-          <p className="text-gray-400">© 2023 Indranil Maiti. All rights reserved.</p>
+          <p className="text-gray-400">© 2024 Indranil Maiti. All rights reserved.</p>
         </footer>
       </main>
 
