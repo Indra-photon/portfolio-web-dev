@@ -1,7 +1,13 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDownIcon, CodeBracketIcon, UserIcon } from '@heroicons/react/24/outline'
 import pic6 from '../assets/Indranil_pic-modified.png'
+import facebook from '../assets/facebook.png'
+import instagram from '../assets/instagram.png'
+import linkedin from '../assets/linkedin.png'
+import github from '../assets/Github.svg'
+import { useNavigate } from 'react-router-dom'
+import Typewriter from 'typewriter-effect';
+import { ContactUs } from './Form/ContactEmailjs'
 import pic7 from '../assets/Bootstrap.svg'
 import pic8 from '../assets/Express.svg'
 import pic9 from '../assets/Git.svg'
@@ -12,14 +18,8 @@ import pic13 from '../assets/React-Dark.svg'
 import pic14 from '../assets/Tailwind.svg'
 import pic15 from '../assets/NodeJS.svg'
 import pic16 from '../assets/JavaScript.svg'
-import { ContactUs } from './Form/ContactEmailjs'
-import Typewriter from 'typewriter-effect';
-import ProjectsCarousel from './Projects'
-import facebook from '../assets/facebook.png'
-import instagram from '../assets/instagram.png'
-import linkedin from '../assets/linkedin.png'
-import github from '../assets/Github.svg'
-import { useNavigate } from 'react-router-dom'
+import { ChevronDownIcon, CodeBracketIcon, UserIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+
 
 const skills = [
   { img: pic11, label: "HTML" },
@@ -33,24 +33,16 @@ const skills = [
   { img: pic12, label: "MongoDB" },
   { img: pic15, label: "NodeJS" },
 ];
-
 const paragraphText = "A skilled web developer, crafting and managing websites and web applications to ensure the success of the entire product with finesse.";
 const words = paragraphText.split(" "); 
-
-
-
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState('home')
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const navigate = useNavigate()
-  const gotoProjectpage = () => {
-    navigate("/all-projects")
-  }
-
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'projects', 'contact']
+      const sections = ['home', 'about', 'contact']
       const scrollPosition = window.scrollY + 100
-
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element && scrollPosition >= element.offsetTop && scrollPosition < element.offsetTop + element.offsetHeight) {
@@ -59,19 +51,21 @@ export default function Portfolio() {
         }
       }
     }
-
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
-
   const smoothScroll = (id) => {
+    if (id === 'projects') {
+      // Redirect to all projects page instead of scrolling
+      navigate('/all-projects')
+      return
+    }
     const element = document.getElementById(id)
     element?.scrollIntoView({ behavior: 'smooth' })
   }
-
   return (
     <div className="bg-gray-900 text-gray-100 min-h-screen">
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-800 bg-opacity-90 backdrop-blur-sm">
+      {/* <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-800 bg-opacity-90 backdrop-blur-sm">
         <ul className="flex justify-center space-x-6 py-4">
           {['home', 'about', 'projects', 'contact'].map((section) => (
             <li key={section}>
@@ -88,11 +82,73 @@ export default function Portfolio() {
             </li>
           ))}
         </ul>
-      </nav>
+      </nav> */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-800 bg-opacity-90 backdrop-blur-sm">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex justify-center space-x-6 py-4">
+          {['home', 'about', 'projects', 'contact'].map((section) => (
+            <li key={section}>
+              <button
+                onClick={() => smoothScroll(section)}
+                className={`text-sm uppercase tracking-wider transition-colors ${
+                  activeSection === section
+                    ? 'text-blue-800'
+                    : 'text-gray-400 hover:text-blue-500'
+                }`}
+              >
+                {section}
+              </button>
+            </li>
+          ))}
+        </ul>
 
+        {/* Mobile Navigation */}
+        <div className="md:hidden flex justify-between items-center px-4 py-4">
+          <span className="text-[#669BBC] font-bold">Indranil Maiti</span>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-gray-400 hover:text-blue-500"
+          >
+            {isMenuOpen ? (
+              <XMarkIcon className="h-6 w-6" />
+            ) : (
+              <Bars3Icon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: 'auto' }}
+              exit={{ opacity: 0, height: 0 }}
+              className="md:hidden bg-gray-800"
+            >
+              <ul className="flex flex-col py-2">
+                {['home', 'about', 'projects', 'contact'].map((section) => (
+                  <li key={section}>
+                    <button
+                      onClick={() => smoothScroll(section)}
+                      className={`w-full text-left px-4 py-2 text-sm uppercase tracking-wider transition-colors ${
+                        activeSection === section
+                          ? 'text-blue-800'
+                          : 'text-gray-400 hover:text-blue-500'
+                      }`}
+                    >
+                      {section}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
       <main className="pt-16">
         <AnimatePresence>
-          <section id="home" className="min-h-screen flex items-center justify-center py-20">
+        <section id="home" className="min-h-screen flex items-center justify-center py-20">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -140,20 +196,33 @@ export default function Portfolio() {
               <div className = 'flex gap-5 justify-center items-center mb-5'>
                 <a href = 'https://github.com/Indra-photon'><img src= {github} className = 'h-8 w-8'></img></a>
                 <a href = 'https://www.facebook.com/indranil.maiti.564/'><img src= {facebook} className = 'h-8 w-8'></img></a>
-                <a href = 'https://www.linkedin.com/in/indranil-maiti-b56967228/'><img src= {linkedin} className = 'h-8 w-8'></img></a>
+                <a href = 'https://www.linkedin.com/in/indranil-maiti-7542941b7/'><img src= {linkedin} className = 'h-8 w-8'></img></a>
                 <a href = 'https://www.instagram.com/indra_d_cogniz_clicker/'><img src= {instagram} className = 'h-8 w-8'></img></a>
               </div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-[#003049] text-white px-6 py-3 rounded-full text-lg font-semibold"
-                onClick={() => smoothScroll('contact')}
-              >
-                Get in Touch
-              </motion.button>
+              <div className='flex-col'>
+                <div>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-[#003049] text-white px-6 py-3 rounded-full text-lg font-semibold"
+                    onClick={() => smoothScroll('contact')}
+                  >
+                    Get in Touch
+                  </motion.button>
+                </div>
+                <div className='mt-5'>
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="bg-[#003049] text-white px-6 py-3 rounded-full text-lg font-semibold"
+                    onClick={() => navigate('/all-projects')}
+                  >
+                    Explore My Work
+                  </motion.button>
+                </div>
+              </div>
             </motion.div>
           </section>
-
           <section id="about" className="min-h-screen flex items-center justify-center py-20">
             <div>
               <motion.div
@@ -191,79 +260,35 @@ export default function Portfolio() {
               <h2 className="text-4xl font-bold mb-8 text-[#669BBC] mt-8">SKILLS</h2>
               <div className="bg-gray-800 p-8 rounded-lg shadow-lg text-[#FDF0D5]">
                 <div className="flex justify-center items-center gap-8">
-                  {/* {skills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      className="relative group flex justify-center"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <img
-                        src={skill.img}
-                        className="h-auto w-auto transition-transform transform"
-                        alt={skill.label}
-                      />
-                      <motion.span
-                        className="absolute inset-0 flex items-center justify-center text-white font-bold opacity-0 group-hover:opacity-100 bg-black bg-opacity-70 rounded-lg"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
+                  <div className="flex justify-center items-center gap-8">
+                    {skills.map((skill, index) => (
+                      <motion.div
+                        key={index}
+                        className="relative group flex justify-center"
+                        whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.3 }}
                       >
-                        {skill.label}
-                      </motion.span>
-                    </motion.div>
-                  ))} */}
-
-                <div className="flex justify-center items-center gap-8">
-                  {skills.map((skill, index) => (
-                    <motion.div
-                      key={index}
-                      className="relative group flex justify-center"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <img
-                        src={skill.img}
-                        className="h-auto w-auto transition-transform transform"
-                        alt={skill.label}
-                        aria-label={skill.label}
-                      />
-                      <motion.span
-                        className="absolute inset-0 flex items-center justify-center text-white font-bold opacity-0 group-hover:opacity-100 bg-black bg-opacity-70 rounded-lg"
-                        initial={{ opacity: 0 }}
-                        whileHover={{ opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                      >
-                        {skill.label}
-                      </motion.span>
-                    </motion.div>
-                  ))}
-                </div>
-
+                        <img
+                          src={skill.img}
+                          className="h-auto w-auto transition-transform transform"
+                          alt={skill.label}
+                        />
+                        <motion.span
+                          className="absolute inset-0 flex items-center justify-center text-white font-bold opacity-0 group-hover:opacity-100 bg-black bg-opacity-70 rounded-lg"
+                          initial={{ opacity: 0 }}
+                          whileHover={{ opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                        >
+                          {skill.label}
+                        </motion.span>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
               </div>
-
             </motion.div>
             </div>
           </section>
-
-          <section id="projects" className="min-h-screen flex items-center justify-center py-20">
-            <div className='text-center'>
-            <h2 className="text-4xl font-bold mb-4 text-[#669BBC]">PROJECTS</h2>
-            <div className='pb-10'>
-              <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-[#003049] text-white px-6 py-3 rounded-full text-lg font-semibold"
-                    onClick={() => gotoProjectpage()}
-                  >
-                    View All Projects
-              </motion.button>
-            </div>
-            <ProjectsCarousel />
-            </div>
-          </section>
-
           <section id="contact" className="min-h-screen flex items-center justify-center py-20">
             <motion.div
               initial={{ opacity: 0 }}
@@ -281,18 +306,16 @@ export default function Portfolio() {
             </motion.div>
           </section>
         </AnimatePresence>
-
         <footer className="bg-gray-800 text-center py-6">
           <div className = 'flex gap-5 justify-center items-center mb-5'>
               <a href = 'https://github.com/Indra-photon'><img src= {github} className = 'h-8 w-8'></img></a>
               <a href = 'https://www.facebook.com/indranil.maiti.564/'><img src= {facebook} className = 'h-8 w-8'></img></a>
-              <a href = 'https://www.linkedin.com/in/indranil-maiti-b56967228/'><img src= {linkedin} className = 'h-8 w-8'></img></a>
+              <a href = 'https://www.linkedin.com/in/indranil-maiti-7542941b7/'><img src= {linkedin} className = 'h-8 w-8'></img></a>
               <a href = 'https://www.instagram.com/indra_d_cogniz_clicker/'><img src= {instagram} className = 'h-8 w-8'></img></a>
           </div>
           <p className="text-gray-400">© 2024 Indranil Maiti. All rights reserved.</p>
         </footer>
       </main>
-
       <motion.button
         onClick={() => smoothScroll('home')}
         className="fixed bottom-8 right-8 bg-purple-600 text-white p-2 rounded-full shadow-lg hover:bg-purple-700 transition duration-300"

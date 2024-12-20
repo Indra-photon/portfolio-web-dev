@@ -29,7 +29,7 @@ const ProjectsCarousel = () => {
       className="flex justify-between items-center gap-8 px-8 sm:flex-col"
     >
 
-      <div className="flex-1 space-y-8">
+      <div className="flex-1 space-y-8 bg-red-800 w-full">
         {projects.slice(0, Math.ceil(projects.length / 2)).map((project) => (
           <motion.div key={project.id} className="bg-gray-800 p-6 rounded-lg shadow-lg text-white">
             <div>
@@ -49,8 +49,8 @@ const ProjectsCarousel = () => {
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-center w-full bg-[#669BBC] text-white py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:translate-y-[-2px]"
-                                whileHover={{ scale: 1.02 }}
+                                className="flex items-center justify-center bg-[#669BBC] text-white py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:translate-y-[-2px]"
+                                whileHover={{ scale: 1.0 }}
                                 whileTap={{ scale: 0.98 }}
                               >
                                 Live Demo
@@ -67,7 +67,7 @@ const ProjectsCarousel = () => {
           <motion.div key={project.id} className="bg-gray-800 p-6 rounded-lg shadow-lg text-white">
           <div>
               <section>
-                  <img src={project.pic} className="h-full"></img>
+                  <img src={project.pic} className="h-full w-full"></img>
               </section>
               <section>
                   <h3 className="text-xl font-bold">{project.name}</h3>
@@ -78,16 +78,16 @@ const ProjectsCarousel = () => {
                   ))}
                   </div>
                   <div className="flex justify-between mt-5">
-                              <motion.a
-                                href={project.liveLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center w-full bg-[#669BBC] text-white py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:translate-y-[-2px]"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                              >
-                                Live Demo
-                              </motion.a>
+                    <motion.a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center w-full bg-[#669BBC] text-white py-2 rounded-lg hover:bg-opacity-90 transition-all duration-300 transform hover:translate-y-[-2px]"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      Live Demo
+                    </motion.a>
                     </div>
               </section>
           </div>
