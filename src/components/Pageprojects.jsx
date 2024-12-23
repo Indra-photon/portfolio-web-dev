@@ -55,10 +55,10 @@ const Pageprojects = () => {
   };
 
   return (
-    <div className="bg-gray-900 min-h-screen py-12 md:py-16 px-4">
+    <div className="bg-gray-900 min-h-screen">
       <div className="bg-gray-900 text-gray-400">
       <div>
-      <nav className="fixed top-0 left-0 mb-10 right-0 z-50 bg-gray-800 bg-opacity-90 backdrop-blur-sm">
+      <nav className="relative mb-10 right-0 z-50 bg-gray-800 bg-opacity-90 backdrop-blur-sm">
           <ul className="flex justify-center space-x-6 py-4">
             {['HOME'].map((section) => (
               <li key={section}>
