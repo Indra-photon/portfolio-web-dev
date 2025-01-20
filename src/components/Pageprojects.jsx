@@ -4,20 +4,11 @@ import ProjectCard from "../components/ProjectCard";
 import pic1 from "../assets/portfolio_pr_dubai.png";
 import pic2 from "../assets/photographer-site.png"
 import pic3 from "../assets/avoron.png"
+import pic4 from '../assets/bakery.png'
 import { useNavigate } from "react-router-dom";
 const projects = [
   {
     id: 1,
-    title: "Facility Management Services, Dubai",
-    description: "A comprehensive web application for ABS Dreams, showcasing facility management services with modern design and functionality.",
-    techStack: ["React", "Tailwind CSS", "Node", "Express", "Framer Motion"],
-    liveLink: "https://www.absdreamsfacilities.com/",
-    githubLink: "https://github.com/gohan-gb/Facility-Management-Site",
-    image: pic1,
-    category: "Frontend"
-  },
-  {
-    id: 2,
     title: "Avoron, an E-commerce site",
     description: "An elegant website designed to showcase avoron's unique products and sell using whatsapp",
     techStack: ["React", "Tailwind CSS", "Node", "Express", "Framer Motion", "Appwrite"],
@@ -27,7 +18,27 @@ const projects = [
     category: "Full Stack"
   },
   {
+    id: 2,
+    title: "Facility Management Services, Dubai",
+    description: "A comprehensive web application for ABS Dreams, showcasing facility management services with modern design and functionality.",
+    techStack: ["React", "Tailwind CSS", "Node", "Express", "Framer Motion"],
+    liveLink: "https://www.absdreamsfacilities.com/",
+    githubLink: "https://github.com/gohan-gb/Facility-Management-Site",
+    image: pic1,
+    category: "Frontend"
+  },
+  {
     id: 3,
+    title: "A Bakery business site, USA",
+    description: "An elegant website for a bakery business in USA, design was provided by the client himslef",
+    techStack: ["React", "Tailwind CSS", "Node", "Express", "Framer Motion", "Appwrite"],
+    liveLink: "https://eat-smile-bakery-swart.vercel.app/",
+    githubLink: "https://github.com/Dev-Sisyphus/Photography-Website",
+    image: pic4,
+    category: "frontend"
+  },
+  {
+    id: 4,
     title: "Portfolio Site, a Photographer Lens",
     description: "An elegant portfolio website designed to showcase photographic work with smooth animations and responsive design.",
     techStack: ["React", "Tailwind CSS", "Node", "Express", "Framer Motion"],
